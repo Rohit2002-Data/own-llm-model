@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
+import os
 from dotenv import load_dotenv 
 load_dotenv()
 
