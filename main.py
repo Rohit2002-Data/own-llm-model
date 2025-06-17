@@ -5,6 +5,7 @@ import torch
 app = FastAPI()
 API_KEY = "1234567890-Ahana-GEMMA-API"
 
+
 tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
 model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", torch_dtype=torch.float16, device_map="auto")
 
