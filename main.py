@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
+from dotenv import load_dotenv 
 load_dotenv()
 
 HF_TOKEN = os.getenv("HF_TOKEN")
