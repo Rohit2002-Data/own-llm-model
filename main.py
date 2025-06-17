@@ -9,7 +9,9 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 API_KEY = os.getenv("API_KEY")
 app = FastAPI()
 tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b", token=HF_TOKEN)
-model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", token=HF_TOKEN, torch_dtype=torch.float16, device_map="auto")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", token=HF_TOKEN, torch_dtype=torch.float16)
+model.to(device)
 
 @app.post("/generate/")
 async def generate(request: Request):
