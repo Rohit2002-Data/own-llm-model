@@ -1,9 +1,12 @@
 from fastapi import FastAPI, Request, HTTPException
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
+load_dotenv()
 
+HF_TOKEN = os.getenv("HF_TOKEN")
+API_KEY = os.getenv("API_KEY")
 app = FastAPI()
-API_KEY = "1234567890-Ahana-GEMMA-API"
+
 
 
 tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
