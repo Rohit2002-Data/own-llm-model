@@ -8,9 +8,9 @@ load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
 API_KEY = os.getenv("API_KEY")
 app = FastAPI()
-tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b", token=HF_TOKEN)
+tokenizer = AutoTokenizer.from_pretrained("distilgpt2", token=HF_TOKEN)
 
-model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", token=HF_TOKEN, torch_dtype=torch.float16,device_map="auto")
+model = AutoModelForCausalLM.from_pretrained("distilgpt2", token=HF_TOKEN, torch_dtype=torch.float16,device_map="auto")
 
 @app.post("/generate/")
 async def generate(request: Request):
