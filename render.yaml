@@ -8,5 +8,5 @@ services:
     startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
       - key: API_KEY
-        value: your_custom_api_key_here
+        value: 1234567890-Ahana-GEMMA-API
     autoDeploy: true
