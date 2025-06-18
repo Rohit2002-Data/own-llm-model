@@ -5,8 +5,8 @@ services:
     plan: free
     region: oregon
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: API_KEY
-        value: 1234567890-Ahana-GEMMA-API
+        value: "1234567890-Ahana-GEMMA-API"
     autoDeploy: true
