@@ -2,5 +2,3 @@ fastapi
 uvicorn
 transformers
 torch
-python-dotenv
-accelerate
